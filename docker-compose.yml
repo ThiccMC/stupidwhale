@@ -13,7 +13,7 @@ services:
   web:
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.web.rule=Host(\"thiccmc.com\", \"localhost\") && PathPrefix(`/`)"
+      - 'traefik.http.routers.web.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/`)'
       - "traefik.http.routers.web.entrypoints=gateway"
     build: web
     expose:
@@ -21,20 +21,20 @@ services:
   auth:
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.auth.rule=Host(\"thiccmc.com\", \"localhost\") && PathPrefix(`/api/auth`)"
+      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/api/auth`)'
       - "traefik.http.routers.auth.entrypoints=gateway"
     build: nut
     env_file:
-      - .env.production
+      - ./.env.production
     expose:
       - 8080
   api:
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.auth.rule=Host(\"thiccmc.com\", \"localhost\") && PathPrefix(`/api/v`)"
+      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/api/v`)'
       - "traefik.http.routers.auth.entrypoints=gateway"
     build: tori
     env_file:
-      - .env.production
+      - ./.env.production
     expose:
       - 8080
