@@ -15,7 +15,7 @@ x-base-template: &base-template
     DANBOORU_IQDB_URL: http://iqdb:5588
     DANBOORU_CANONICAL_URL: http://localhost:3000
     # # If you want to host danbooru under your own domain you need to replace the above line with the following (replace with your actual domain):
-    DANBOORU_CANONICAL_URL: https://booru.thiccmc.com
+    # DANBOORU_CANONICAL_URL: https://booru.thiccmc.com
     DANBOORU_HOSTNAME: booru.thiccmc.com
   volumes:
     - "danbooru-images:/danbooru/public/data"
