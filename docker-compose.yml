@@ -1,3 +1,6 @@
+# include:
+#   - ./img/docker-compose.yml
+
 services:
   traefik:
     image: traefik:v2.4
@@ -31,9 +34,9 @@ services:
   api:
     labels:
       - "traefik.enable=true"
-      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/api/v`)'
-      - "traefik.http.routers.auth.entrypoints=gateway"
-    build: tori
+      - 'traefik.http.routers.api.rule=Host("api.thiccmc.com", "localhost") && PathPrefix(`/`)'
+      - "traefik.http.routers.api.entrypoints=gateway"
+    build: lilypot
     env_file:
       - ./.env.production
     expose:

@@ -1,9 +1,9 @@
 [submodule "nut"]
 	path = nut
 	url = git@github.com:ThiccMC/nut
-[submodule "tori"]
-	path = tori
-	url = git@github.com:ThiccMC/tori
 [submodule "web"]
 	path = web
 	url = git@github.com:ThiccMC/thicc-web
+[submodule "lilypot"]
+	path = lilypot
+	url = git@github.com:ThiccMC/lilypot
