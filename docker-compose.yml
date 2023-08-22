@@ -19,6 +19,8 @@ services:
       - 'traefik.http.routers.web.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/`)'
       - "traefik.http.routers.web.entrypoints=gateway"
     build: web
+    env_file:
+      - ./.env.production
     expose:
       - 3000
   api:
