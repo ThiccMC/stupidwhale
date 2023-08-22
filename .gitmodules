@@ -4,6 +4,3 @@
 [submodule "web"]
 	path = web
 	url = git@github.com:ThiccMC/thicc-web
-[submodule "lilypot"]
-	path = lilypot
-	url = git@github.com:ThiccMC/lilypot

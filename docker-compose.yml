@@ -21,22 +21,12 @@ services:
     build: web
     expose:
       - 3000
-  auth:
-    labels:
-      - "traefik.enable=true"
-      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "localhost") && PathPrefix(`/api/auth`)'
-      - "traefik.http.routers.auth.entrypoints=gateway"
-    build: nut
-    env_file:
-      - ./.env.production
-    expose:
-      - 8080
   api:
     labels:
       - "traefik.enable=true"
-      - 'traefik.http.routers.api.rule=Host("api.thiccmc.com", "localhost") && PathPrefix(`/`)'
-      - "traefik.http.routers.api.entrypoints=gateway"
-    build: lilypot
+      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "api.localhost") && PathPrefix(`/`)'
+      - "traefik.http.routers.auth.entrypoints=gateway"
+    build: nut
     env_file:
       - ./.env.production
     expose:
