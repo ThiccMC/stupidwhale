@@ -26,7 +26,7 @@ services:
   api:
     labels:
       - "traefik.enable=true"
-      - 'traefik.http.routers.auth.rule=Host("thiccmc.com", "api.localhost") && PathPrefix(`/`)'
+      - 'traefik.http.routers.auth.rule=Host("api.thiccmc.com", "api.localhost") && PathPrefix(`/`)'
       - "traefik.http.routers.auth.entrypoints=gateway"
     build: nut
     env_file:
